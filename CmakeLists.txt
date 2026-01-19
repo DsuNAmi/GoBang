@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.10)
+project(GoBang C)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED on)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# Add source files
+add_subdirectory(core)
+add_subdirectory(ui)
+add_subdirectory(tools)
+add_subdirectory(api)
+
+# Create the executable
+add_executable(GoBang main.c)
+
+# Link libraries to the executable
+target_link_libraries(GoBang
+    CoreModule
+    ApiModule
+    UiMoudle
+    ToolsModule
+    FormalModule
+)
+
+target_include_directories(GoBang PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/core
+    ${CMAKE_CURRENT_SOURCE_DIR}/ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools
+    ${CMAKE_CURRENT_SOURCE_DIR}/api
+    ${CMAKE_CURRENT_SOURCE_DIR}/formal
+)
