@@ -1,0 +1,14 @@
+# vscode
+.vscode/
+
+
+
+# makefile artifacts
+main.dSYM
+*.o
+*.obj
+*.exe
+*.out
+*.class
+*.jar
+*.war
