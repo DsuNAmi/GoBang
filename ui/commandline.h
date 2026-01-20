@@ -3,6 +3,15 @@
 
 #include "../formal/basic.h"
 
+
+enum MODULE_CHOICE_T
+{
+    MODULE_CHOICE_EXIT = 0,
+    MODULE_CHOICE_TRANSLATE = 1,
+    MODULE_CHOICE_DEFAULT1 = 2,
+    MODULE_CHOICE_DEFAULT2 = 3
+};
+
 #define PRINT_MODULE_MENU() \
     do { \
         GO_Printf("===== GoBang =====\n"); \
