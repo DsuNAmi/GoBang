@@ -31,9 +31,6 @@ VOID FunctionSelected(VOID)
             GO_Printf("Invalid choice. Please try again.\n");
             break;
     }
-
-    
-
 }
 
 int main(int argc, char *argv[])

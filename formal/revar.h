@@ -41,16 +41,19 @@ typedef void VOID;
 
 
 /* function */
-#define MAX(a,b)            (((a) > (b)) ? (a) : (b))
-#define MIN(a,b)            (((a) < (b)) ? (a) : (b))
-#define ABS(a)              (((a) < 0) ? -(a) : (a))
-#define SWAP(a,b,temp)     { (temp) = (a); (a) = (b); (b) = (temp); }
+#define GO_MAX(a,b)            (((a) > (b)) ? (a) : (b))
+#define GO_MIN(a,b)            (((a) < (b)) ? (a) : (b))
+#define GO_ABS(a)              (((a) < 0) ? -(a) : (a))
+#define GO_SWAP(a,b,temp)     { (temp) = (a); (a) = (b); (b) = (temp); }
 
-#define FOR_EACH(list, index, size, function)    \
+#define GO_FOR_EACH(list, index, size, function)    \
     for (index = 0; index < (size); index++) {    \
         function(list[index]);                   \
     }\
 
-
+#define GO_INIT_STRUC(struc) \
+{ \
+    memset(&(struc), 0, sizeof(struc)); \
+}
 
 #endif // __REVAR_H__
