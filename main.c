@@ -3,20 +3,28 @@
 #include "formal/revar.h"
 #include "ui/commandline.h"
 #include "formal/basic.h"
+#include "core/translate.h"
 
 
 VOID FunctionSelected(VOID)
 {
+    ULONG ulRet = COMMAND_SUCCEED;
     INT ichoice = 0;
 
     PRINT_MODULE_MENU();
 
-    GO_Scanf("%d", &ichoice);
+    ulRet = GO_SAFE_FGETS(&ichoice);
+    if (COMMAND_SUCCEED != ulRet)
+    {
+        GO_Printf("FunctionSelected: GO_SAFE_FGETS failed.\n");
+        return;
+    }
 
     switch (ichoice)
     {
         case MODULE_CHOICE_TRANSLATE:
             GO_Printf("You selected Translate module.\n");
+            (VOID)TranslateFunction();
             break;
         case MODULE_CHOICE_DEFAULT1:
             GO_Printf("You selected Default1 module.\n");
@@ -35,5 +43,6 @@ VOID FunctionSelected(VOID)
 
 int main(int argc, char *argv[])
 {
+    FunctionSelected();
     return 0;
 }

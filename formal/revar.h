@@ -2,6 +2,9 @@
 #define __REVAR_H__
 
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* formal */
 #define IN 
@@ -54,6 +57,28 @@ typedef void VOID;
 #define GO_INIT_STRUC(struc) \
 { \
     memset(&(struc), 0, sizeof(struc)); \
+}
+
+#define GO_MALLOC(var, type, size) \
+{ \
+    (var) = (type *)malloc(size); \
+}
+
+#define GO_FGETS(buffer, size, stream) \
+    fgets(buffer, size, stream)
+
+#define GO_STRNCMP(str1, str2, n) \
+    strncmp((str1), (str2), (n)
+
+#define GO_STRNCPY(dest, src, size) \
+    strncpy((dest), (src), (size))
+
+#define GO_FREE(ptr) \
+{ \
+    if (NULL != (ptr)) { \
+        free(ptr); \
+        (ptr) = NULL; \
+    } \
 }
 
 #endif // __REVAR_H__

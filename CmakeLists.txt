@@ -10,6 +10,7 @@ add_subdirectory(core)
 add_subdirectory(ui)
 add_subdirectory(tools)
 add_subdirectory(api)
+add_subdirectory(formal)
 
 # Create the executable
 add_executable(GoBang main.c)
@@ -18,7 +19,7 @@ add_executable(GoBang main.c)
 target_link_libraries(GoBang
     CoreModule
     ApiModule
-    UiMoudle
+    UiModule
     ToolsModule
     FormalModule
 )

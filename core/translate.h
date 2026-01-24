@@ -2,6 +2,7 @@
 #define TRANSLATE_H
 
 #include "../formal/revar.h"
+#include "../formal/basic.h"
 
 #define T_MAX_TEXT_LENGTH 1024
 
@@ -22,5 +23,7 @@ typedef struct tagTranslateContext
     T_LANGUAGE_TYPE eTargetLanguageType;
     CHAR szPostText[T_MAX_TEXT_LENGTH];
 }T_TranslateContext;
+
+extern ULONG TranslateFunction(VOID);
 
 #endif // TRANSLATE_H
