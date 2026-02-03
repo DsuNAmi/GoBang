@@ -68,7 +68,7 @@ typedef void VOID;
     fgets(buffer, size, stream)
 
 #define GO_STRNCMP(str1, str2, n) \
-    strncmp((str1), (str2), (n)
+    strncmp((str1), (str2), (n))
 
 #define GO_STRNCPY(dest, src, size) \
     strncpy((dest), (src), (size))

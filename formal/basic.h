@@ -1,7 +1,6 @@
 #ifndef __BASIC_H__
 #define __BASIC_H__
 
-#include "basic.h"
 #include "revar.h"
 #include <stdio.h>
 

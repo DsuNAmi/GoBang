@@ -26,4 +26,7 @@ typedef struct tagTranslateContext
 
 extern ULONG TranslateFunction(VOID);
 
+/* expose Translate for unit testing */
+extern ULONG Translate(IN CHAR * pszInput, IN T_LANGUAGE_TYPE eTargetLanguageType, OUT CHAR * pszOutput);
+
 #endif // TRANSLATE_H
